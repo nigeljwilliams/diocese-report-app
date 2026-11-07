@@ -1,0 +1,18 @@
+<div class="login-container">
+  <div class="content-container">
+    <div class="form-title">Login</div>
+    <div class="input-title">Username</div>
+    <input class="form-input"
+           [formControl]="usernameControl" />
+    <div class="input-title">Password</div>
+    <input class="form-input"
+           [formControl]="passwordControl" />
+    <button class="login-btn blue-btn"
+            (click)="login()">Login</button>
+    @if (hasError) {
+      <div class="error-message-container">
+        <div class="error-message">{{errorMessage}}</div>
+      </div>
+    }
+  </div>
+</div>
