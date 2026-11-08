@@ -1,12 +1,11 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { AuthResult } from '../models/models/auth-result';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { ErrorResponse } from '../../core/models/error-response.interface';
-import { HttpErrorCode } from '../../core/enums/http-error-code.enum';
-import { ThisReceiver } from '@angular/compiler';
+import { ToastMessageService } from '../../shared/toast/services/toast-message.service';
+import { ToastMessageType } from '../../shared/toast/enums/toast-message-type.enum';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +20,7 @@ import { ThisReceiver } from '@angular/compiler';
 export class LoginComponent implements OnInit, OnDestroy {
 
   private readonly _authService = inject(AuthService);
+  private readonly _toastMessageService = inject(ToastMessageService);
 
   /**
    * FormControl for the username input
@@ -62,8 +62,12 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.errorMessage = result.message;
         },
         error: (error: ErrorResponse) => {
-          this.hasError = true;
-          this.errorMessage = error.message;
+          this._toastMessageService.createToast({
+            messageType: ToastMessageType.ERROR,
+            title: 'Login Error',
+            message: error.message,
+            durationMillis: 5000,
+          });
         }
       });
   }

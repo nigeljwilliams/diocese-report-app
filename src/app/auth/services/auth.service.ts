@@ -1,9 +1,8 @@
-import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { catchError, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { AuthResult } from '../models/models/auth-result';
 import { environment } from '../../../environments/environment';
-import { ErrorResponse } from '../../core/models/error-response.interface';
 
 @Injectable({
   providedIn: 'root'
