@@ -1,3 +1,6 @@
+/**
+ * An enum used for determining the icon size for the IconComponent
+ */
 export enum IconSize {
   SIZE_X_SMALL = 'SIZE_X_SMALL',
   SIZE_SMALL = 'SIZE_SMALL',

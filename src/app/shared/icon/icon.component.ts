@@ -14,14 +14,32 @@ import { IconColor } from './enums/icon-color.enum';
 })
 export class IconComponent {
 
+  /**
+   * The name of the font awesome icon
+   */
   name = input<string>('infoCicle');
+  
+  /**
+   * The size of the icon
+   */
   size = input<IconSize>(IconSize.SIZE_SMALL);
+
+  /**
+   * The color of the icon
+   */
   color = input<IconColor>(IconColor.BLACK);
 
+  /**
+   * The icon object determined by the icon name which selects which font awesome
+   * icon will be displayed
+   */
   get iconObject(): IconDefinition {
     return APP_ICONS[this.name()];
   }
 
+  /**
+   * The size of the font awesome icon
+   */
   get iconSize(): SizeProp {
     switch (this.size()) {
       case IconSize.SIZE_SMALL:
@@ -53,6 +71,9 @@ export class IconComponent {
     }
   }
 
+  /**
+   * The icon's class name, determined by the icon color
+   */
   get iconClass(): string {
     switch (this.color()) {
       case IconColor.WHITE:
