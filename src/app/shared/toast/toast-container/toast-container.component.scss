@@ -1,0 +1,6 @@
+.toast-overlay {
+    position: fixed;
+    top: 78px; // App title bar is 70px tall. Make this appaer just below that
+    right: 10px;
+    z-index: 9999;
+}

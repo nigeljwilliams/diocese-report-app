@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(84, 84, 84, 0.9);
+    padding: 0;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.toast-icon {
+    display: flex;
+    align-self: flex-start;
+    padding: 24px 18px 0 24px;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 24px 0;
+}
+
+.title {
+    display: flex;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    padding-bottom: 12px;
+}
+
+.message {
+    display: flex;
+    font-size: 14px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.close-btn {
+    display: flex;
+    align-self: flex-start;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 8px 0 12px;
+    border: none;
+}
+
+.close-btn:hover {
+    @extend .close-btn;
+    cursor: pointer;
+}
+
+.close-btn-icon {
+
+}

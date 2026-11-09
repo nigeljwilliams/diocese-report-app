@@ -1,0 +1,17 @@
+<div class="container">
+  <app-icon class="toast-icon"
+            [name]="iconName"
+            [size]="toastIconSize"
+            [color]="iconColor" />
+  <div class="message-container">
+    <div class="title">{{title}}</div>
+    <div class="message">{{message}}</div>
+  </div>
+  <button class="close-btn"
+          (click)="close()">
+    <app-icon class="close-btn-icon"
+              [name]="closeIconName"
+              [size]="closeIconSize"
+              [color]="closeIconColor"></app-icon>
+  </button>
+</div>
